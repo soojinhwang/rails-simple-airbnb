@@ -1,0 +1,28 @@
+<div class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Simple Airbnb</a>
+  <form class="form-inline">
+    <button class="btn btn-outline-primary" type="button">
+      <%= link_to "Add Flat", new_flat_path %>
+    </button>
+  </form>
+</div>
+
+<div class="container">
+  <div class="flats-list">
+  <h1><strong><%= "All our flats (#{@flats.count})" %></strong></h1>
+  <div class="cards d-flex row">
+    <% @flats.each do |flat| %>
+      <div class="card" style="width: 400px;">
+        <div class="card-content card-header">
+          <h5><strong><%= flat.name %></strong></h5>
+          <p><%= flat.address %></p>
+          <p><i class="fal fa-user-friends"></i> <%= flat.number_of_guests %></p>
+          <p><i class="fal fa-pound-sign"></i> <%= flat.price_per_night %></p>
+        </div>
+        <div class="card-actions">
+          <%= link_to "More info", flat_path(flat) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
