@@ -1,1 +1,37 @@
-<h1><%= @flat.name %></h1>
+<div class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Simple Airbnb</a>
+  <form class="form-inline">
+    <button class="btn btn-outline-primary" type="button">
+      <%= link_to "Add Flat", new_flat_path %>
+    </button>
+  </form>
+</div>
+
+<div class="container">
+  <div class="container flat">
+    <div class="container flat-title">
+      <h2><%= @flat.name %></h2>
+      <h5><%= @flat.address %></h5>
+    </div>
+
+    <div class="container flat-description">
+      <h3>A bit more about this flat...</h3>
+      <p><%= @flat.description %></p>
+    </div>
+  </div>
+
+  <div class="container other">
+    <div class="container booking">
+      <h4>Book this place!</h4>
+    </div>
+    <div class="container details">
+      <h4>Details</h4>
+      <p><i class="fal fa-user-friends"></i> <%= @flat.number_of_guests %></p>
+      <p><i class="fal fa-pound-sign"></i> <%= @flat.price_per_night %></p>
+    </div>
+    <div class="container socila-media">
+      <h5>Share</h5>
+    </div>
+  </div>
+
+</div>
